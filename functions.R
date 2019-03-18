@@ -37,8 +37,8 @@ get_srf_data <- function(url) {
   article.title <- cleanFun(article.title)
   article.title  <- gsub('\n', "", article.title )
   article.title  <- trimws(article.title)
-  #message(article.title)
-  #message(twitter.description)
-  #message(article.content)
-  #message(twitter.image)
+  article.title <<-   article.title
+  twitter.description <<-   twitter.description
+  article.content <<-   article.content
+  twitter.image <<-   twitter.image
 }
