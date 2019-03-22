@@ -10,10 +10,13 @@ data <- data.frame(
   article.title = NA,
   twitter.description = NA,
   twitter.image = NA)
-
-`url_list` <- read.delim("~/Downloads/1552934988975_219259.csv", header=FALSE)
+#urls einlesen
+#download data here: https://analytics.webtrekk.com/analytics/#!/analytics/permalink/account/292330999892453/reports/963
+data.url <- "https://raw.githubusercontent.com/Taopi/hackdays19/master/1553236820922_543754.csv"
+url_list <- read.delim(data.url, header=FALSE)
 url_list <- url_list$V2
 names(url_list) <- "article.url"
+url_list <- unique(url_list)
 
 for (url in url_list[1:1000]) {
   tryCatch({
